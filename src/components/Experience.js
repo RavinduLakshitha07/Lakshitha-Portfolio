@@ -23,7 +23,7 @@ const Experience = () => {
       title: "ChoonPan Mobile App",
       role: "Mobile App Developer",
       period: "2025",
-      location: "Personal Project",
+      location: "Academic Project",
       description: "Developed a full-stack food delivery mobile application with real-time tracking and payment processing.",
       achievements: [
         "Built complete mobile app using Expo, React Native and Firebase",
