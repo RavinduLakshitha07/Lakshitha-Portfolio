@@ -67,7 +67,7 @@ const Hero = () => {
               transition={{ delay: 0.4, duration: 1 }}
               className="text-2xl md:text-3xl text-secondary font-semibold mb-8 bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent"
             >
-              IT Undergraduate & Full-Stack Developer
+              IT Undergraduate & Software Developer
             </motion.h2>
 
             {/* Profile Summary with enhanced styling */}
