@@ -214,9 +214,7 @@ const Footer = () => {
             © {currentYear} Ravindu Lakshitha. All rights reserved.
           </p>
 
-          <p className="text-[11px] text-gray-700">
-            Designed & built with React
-          </p>
+          
         </div>
       </div>
     </footer>
