@@ -1,172 +1,486 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  FaJava, 
-  FaJs, 
-  FaDatabase, 
-  FaHtml5, 
-  FaCss3Alt, 
-  FaReact, 
-  FaFire
+import {
+  FaReact,
+  FaNodeJs,
+  FaPython,
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaGitAlt,
+  FaDocker,
+  FaJava,
+  FaFigma,
 } from 'react-icons/fa';
-import { SiMongodb, SiKotlin } from 'react-icons/si';
+import {
+  SiFlutter,
+  SiFirebase,
+  SiMongodb,
+  SiMysql,
+  SiTypescript,
+  SiTailwindcss,
+  SiExpress,
+  SiPostman,
+  SiGithub,
+} from 'react-icons/si';
 
 const Skills = () => {
-  const skills = [
-    { name: 'Java', icon: FaJava, color: 'text-orange-500', bgColor: 'bg-orange-50', borderColor: 'border-orange-200' },
-    { name: 'JavaScript', icon: FaJs, color: 'text-yellow-400', bgColor: 'bg-yellow-50', borderColor: 'border-yellow-200' },
-    { name: 'SQL', icon: FaDatabase, color: 'text-blue-500', bgColor: 'bg-blue-50', borderColor: 'border-blue-200' },
-    { name: 'HTML', icon: FaHtml5, color: 'text-orange-600', bgColor: 'bg-orange-50', borderColor: 'border-orange-200' },
-    { name: 'CSS', icon: FaCss3Alt, color: 'text-blue-600', bgColor: 'bg-blue-50', borderColor: 'border-blue-200' },
-    { name: 'React', icon: FaReact, color: 'text-blue-400', bgColor: 'bg-blue-50', borderColor: 'border-blue-200' },
-    { name: 'JSP', icon: FaJava, color: 'text-orange-500', bgColor: 'bg-orange-50', borderColor: 'border-orange-200' },
-    { name: 'MongoDB', icon: SiMongodb, color: 'text-green-500', bgColor: 'bg-green-50', borderColor: 'border-green-200' },
-    { name: 'Firebase', icon: FaFire, color: 'text-orange-500', bgColor: 'bg-orange-50', borderColor: 'border-orange-200' },
-    { name: 'Kotlin', icon: SiKotlin, color: 'text-purple-500', bgColor: 'bg-purple-50', borderColor: 'border-purple-200' },
-  ];
+  const skillGroups = [
+    {
+      title: 'Frontend',
+      description: 'Building responsive and interactive interfaces.',
+      skills: [
+        {
+          name: 'React',
+          icon: FaReact,
+          color: 'text-cyan-400',
+        },
+        {
+          name: 'JavaScript',
+          icon: FaJs,
+          color: 'text-yellow-400',
+        },
+        {
+          name: 'TypeScript',
+          icon: SiTypescript,
+          color: 'text-blue-400',
+        },
+        {
+          name: 'HTML5',
+          icon: FaHtml5,
+          color: 'text-orange-500',
+        },
+        {
+          name: 'CSS3',
+          icon: FaCss3Alt,
+          color: 'text-blue-500',
+        },
+        {
+          name: 'Tailwind CSS',
+          icon: SiTailwindcss,
+          color: 'text-cyan-300',
+        },
+      ],
+    },
 
-  const skillCategories = [
     {
-      title: 'Programming Languages',
-      skills: ['Java', 'JavaScript', 'Kotlin'],
-      gradient: 'from-blue-500 to-cyan-500'
+      title: 'Mobile',
+      description: 'Creating practical cross-platform applications.',
+      skills: [
+        {
+          name: 'Flutter',
+          icon: SiFlutter,
+          color: 'text-cyan-400',
+        },
+        {
+          name: 'Dart',
+          icon: SiFlutter,
+          color: 'text-blue-400',
+        },
+        {
+          name: 'React Native',
+          icon: FaReact,
+          color: 'text-blue-400',
+        },
+      ],
     },
+
     {
-      title: 'Web Technologies',
-      skills: ['HTML', 'CSS', 'React', 'JSP'],
-      gradient: 'from-purple-500 to-pink-500'
+      title: 'Backend',
+      description: 'Developing APIs and application services.',
+      skills: [
+        {
+          name: 'Node.js',
+          icon: FaNodeJs,
+          color: 'text-green-500',
+        },
+        {
+          name: 'Express',
+          icon: SiExpress,
+          color: 'text-gray-200',
+        },
+        {
+          name: 'Python',
+          icon: FaPython,
+          color: 'text-yellow-400',
+        },
+        {
+          name: 'Java',
+          icon: FaJava,
+          color: 'text-red-400',
+        },
+      ],
     },
+
     {
-      title: 'Databases',
-      skills: ['SQL', 'MongoDB', 'Firebase'],
-      gradient: 'from-green-500 to-emerald-500'
-    }
+      title: 'Database & Cloud',
+      description: 'Working with data, services and cloud platforms.',
+      skills: [
+        {
+          name: 'Firebase',
+          icon: SiFirebase,
+          color: 'text-yellow-400',
+        },
+        {
+          name: 'MongoDB',
+          icon: SiMongodb,
+          color: 'text-green-400',
+        },
+        {
+          name: 'MySQL',
+          icon: SiMysql,
+          color: 'text-blue-300',
+        },
+      ],
+    },
+
+    {
+      title: 'Tools & Workflow',
+      description: 'Tools I use to build and manage projects.',
+      skills: [
+        {
+          name: 'Git',
+          icon: FaGitAlt,
+          color: 'text-orange-500',
+        },
+        {
+          name: 'GitHub',
+          icon: SiGithub,
+          color: 'text-white',
+        },
+        {
+          name: 'Docker',
+          icon: FaDocker,
+          color: 'text-blue-400',
+        },
+        {
+          name: 'Postman',
+          icon: SiPostman,
+          color: 'text-orange-400',
+        },
+        {
+          name: 'Figma',
+          icon: FaFigma,
+          color: 'text-pink-400',
+        },
+      ],
+    },
   ];
 
   return (
-    <section id="skills" className="section-padding bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50">
-      <div className="container-custom">
+    <section
+      className="
+        relative
+        py-28
+        px-4
+        sm:px-6
+        lg:px-8
+        overflow-hidden
+      "
+    >
+      <div className="max-w-7xl mx-auto">
+
+        {/* =====================================================
+            HEADER
+        ===================================================== */}
+
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-20"
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.3,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
+          className="max-w-3xl mb-14"
         >
-          <h2 className="text-5xl font-bold text-primary mb-6">Skills & Technologies</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-accent to-blue-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            I've developed expertise in various technologies through academic projects and personal development.
+          <div className="section-label mb-4">
+            Skills & Technologies
+          </div>
+
+          <h2
+            className="
+              text-4xl
+              sm:text-5xl
+              lg:text-6xl
+              font-bold
+              tracking-tight
+            "
+          >
+            Tools I use to
+            <span className="gradient-text">
+              {' '}
+              build things.
+            </span>
+          </h2>
+
+          <p className="mt-5 text-gray-400 leading-7 max-w-2xl">
+            A collection of technologies and tools I use while
+            developing web applications, mobile applications
+            and backend systems.
           </p>
         </motion.div>
 
-        {/* Enhanced Skills Grid */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-20"
-        >
-          {skills.map((skill, index) => (
-            <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, scale: 0.8, y: 50 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ 
-                scale: 1.1, 
-                y: -10,
-                rotateY: 10,
-                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
-              }}
-              className={`${skill.bgColor} ${skill.borderColor} border-2 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center group cursor-pointer`}
-            >
-              <motion.div
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.6 }}
-                className={`text-5xl ${skill.color} mb-4 mx-auto group-hover:scale-110 transition-transform duration-300`}
-              >
-                <skill.icon />
-              </motion.div>
-              <h3 className="font-bold text-gray-800 text-lg group-hover:text-accent transition-colors duration-300">
-                {skill.name}
-              </h3>
-            </motion.div>
-          ))}
-        </motion.div>
+        {/* =====================================================
+            SKILL GROUPS
+        ===================================================== */}
 
-        {/* Enhanced Skills Categories */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-8 mb-16"
-        >
-          {skillCategories.map((category, index) => (
+        <div className="space-y-5">
+          {skillGroups.map((group, groupIndex) => (
             <motion.div
-              key={category.title}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 + index * 0.2 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -5, scale: 1.02 }}
-              className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100"
+              key={group.title}
+              initial={{
+                opacity: 0,
+                y: 35,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.15,
+              }}
+              transition={{
+                duration: 0.65,
+                delay: groupIndex * 0.08,
+              }}
+              className="
+                group
+                relative
+                overflow-hidden
+                rounded-3xl
+                border
+                border-white/[0.08]
+                bg-white/[0.025]
+                p-6
+                sm:p-7
+                lg:p-8
+                transition-all
+                duration-500
+                hover:bg-white/[0.04]
+                hover:border-white/[0.13]
+              "
             >
-              <div className={`bg-gradient-to-r ${category.gradient} p-6 text-white`}>
-                <h3 className="text-2xl font-bold">{category.title}</h3>
-              </div>
-              <div className="p-6">
-                <div className="space-y-3">
-                  {category.skills.map((skill, skillIndex) => (
-                    <motion.div
-                      key={skill}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: skillIndex * 0.1 }}
-                      viewport={{ once: true }}
-                      className="flex items-center"
-                    >
-                      <div className="w-3 h-3 bg-accent rounded-full mr-4"></div>
-                      <span className="text-gray-700 font-medium">{skill}</span>
-                    </motion.div>
-                  ))}
+              {/* Background glow */}
+              <div
+                className="
+                  absolute
+                  -right-32
+                  -top-32
+                  w-64
+                  h-64
+                  rounded-full
+                  bg-blue-500/[0.035]
+                  blur-[80px]
+                  opacity-0
+                  group-hover:opacity-100
+                  transition-opacity
+                  duration-700
+                  pointer-events-none
+                "
+              />
+
+              <div
+                className="
+                  relative
+                  flex
+                  flex-col
+                  lg:flex-row
+                  lg:items-center
+                  gap-7
+                "
+              >
+                {/* Group information */}
+                <div className="lg:w-[250px] shrink-0">
+                  <div className="flex items-center gap-3">
+                    <span
+                      className="
+                        w-2
+                        h-2
+                        rounded-full
+                        bg-blue-400
+                        shadow-lg
+                        shadow-blue-400/40
+                      "
+                    />
+
+                    <h3 className="text-xl font-semibold text-white">
+                      {group.title}
+                    </h3>
+                  </div>
+
+                  <p className="mt-2 text-sm text-gray-500 leading-6">
+                    {group.description}
+                  </p>
+                </div>
+
+                {/* Divider */}
+                <div
+                  className="
+                    hidden
+                    lg:block
+                    w-px
+                    self-stretch
+                    bg-white/[0.07]
+                  "
+                />
+
+                {/* Technologies */}
+                <div
+                  className="
+                    flex
+                    flex-wrap
+                    gap-3
+                    flex-1
+                  "
+                >
+                  {group.skills.map((skill, skillIndex) => {
+                    const Icon = skill.icon;
+
+                    return (
+                      <motion.div
+                        key={skill.name}
+                        initial={{
+                          opacity: 0,
+                          scale: 0.9,
+                        }}
+                        whileInView={{
+                          opacity: 1,
+                          scale: 1,
+                        }}
+                        viewport={{
+                          once: true,
+                        }}
+                        transition={{
+                          duration: 0.4,
+                          delay:
+                            groupIndex * 0.08 +
+                            skillIndex * 0.04,
+                        }}
+                        whileHover={{
+                          y: -4,
+                          scale: 1.03,
+                        }}
+                        className="
+                          group/skill
+                          flex
+                          items-center
+                          gap-2.5
+                          px-4
+                          py-3
+                          rounded-xl
+                          bg-black/20
+                          border
+                          border-white/[0.07]
+                          hover:border-white/[0.15]
+                          hover:bg-white/[0.06]
+                          transition-all
+                          duration-300
+                          cursor-default
+                        "
+                      >
+                        <Icon
+                          className={`
+                            text-lg
+                            ${skill.color}
+                            transition-transform
+                            duration-300
+                            group-hover/skill:scale-110
+                          `}
+                        />
+
+                        <span
+                          className="
+                            text-sm
+                            font-medium
+                            text-gray-400
+                            group-hover/skill:text-white
+                            transition-colors
+                            duration-300
+                          "
+                        >
+                          {skill.name}
+                        </span>
+                      </motion.div>
+                    );
+                  })}
                 </div>
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
-        {/* Enhanced Additional Info */}
+        {/* =====================================================
+            BOTTOM STATEMENT
+        ===================================================== */}
+
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center"
+          initial={{
+            opacity: 0,
+            y: 25,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.3,
+          }}
+          transition={{
+            duration: 0.7,
+            delay: 0.2,
+          }}
+          className="
+            relative
+            mt-8
+            overflow-hidden
+            rounded-3xl
+            border
+            border-blue-500/10
+            bg-gradient-to-r
+            from-blue-500/[0.06]
+            via-indigo-500/[0.04]
+            to-purple-500/[0.06]
+            px-6
+            py-7
+            sm:px-8
+            sm:py-8
+          "
         >
-          <div className="bg-gradient-to-r from-white to-gray-50 p-12 rounded-3xl shadow-2xl max-w-5xl mx-auto border border-gray-100">
-            <h3 className="text-3xl font-bold text-primary mb-6">Development Approach</h3>
-            <p className="text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-              I focus on creating responsive, user-friendly applications with clean code architecture. 
-              My experience spans both frontend and backend development, with particular expertise in 
-              React, Java, and mobile development using React Native and Kotlin.
-            </p>
-            <div className="mt-8 flex justify-center space-x-8">
-              <div className="text-center">
-                <div className="text-4xl font-bold text-accent mb-2">4+</div>
-                <div className="text-gray-600 font-medium">Projects</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-accent mb-2">10+</div>
-                <div className="text-gray-600 font-medium">Technologies</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-accent mb-2">2</div>
-                <div className="text-gray-600 font-medium">Mobile Apps</div>
-              </div>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+            <div>
+              <p className="text-sm font-semibold text-white">
+                Always learning. Always building.
+              </p>
+
+              <p className="mt-1 text-sm text-gray-500">
+                Technology changes quickly — and I enjoy keeping up.
+              </p>
+            </div>
+
+            <div
+              className="
+                flex
+                items-center
+                gap-2
+                text-xs
+                uppercase
+                tracking-[0.15em]
+                text-blue-400
+              "
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              Open to opportunities
             </div>
           </div>
         </motion.div>
@@ -175,4 +489,4 @@ const Skills = () => {
   );
 };
 
-export default Skills; 
+export default Skills;

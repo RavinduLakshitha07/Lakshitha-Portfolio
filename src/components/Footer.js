@@ -1,117 +1,226 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaHeart } from 'react-icons/fa';
+import {
+  FaGithub,
+  FaLinkedin,
+  FaArrowUp,
+} from 'react-icons/fa';
+import { Link } from 'react-scroll';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const socialLinks = [
-    {
-      icon: FaEnvelope,
-      href: 'mailto:ravindlakshitha121@gmail.com',
-      label: 'Email'
-    },
-    {
-      icon: FaLinkedin,
-      href: 'https://www.linkedin.com/in/ravindu-lakshitha-05865b36b',
-      label: 'LinkedIn'
-    },
-    {
-      icon: FaGithub,
-      href: 'https://github.com/RavinduLakshitha07',
-      label: 'GitHub'
-    }
-  ];
-
   return (
-    <footer className="bg-primary text-white">
-      <div className="container-custom py-12">
-        <div className="grid md:grid-cols-3 gap-8 items-center">
+    <footer className="relative px-4 sm:px-6 lg:px-8 pb-8 pt-10">
+      <div className="max-w-7xl mx-auto">
+
+        {/* Top divider */}
+        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+        <div className="py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+
           {/* Brand */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center md:text-left"
-          >
-            <h3 className="text-2xl font-bold mb-2">RAVINDU LAKSHITHA</h3>
-            <p className="text-gray-300">IT Undergraduate & Software Developer</p>
-          </motion.div>
-
-          {/* Quick Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <h4 className="font-semibold mb-4">Quick Links</h4>
-            <div className="flex flex-col space-y-2">
-              <a href="#about" className="text-gray-300 hover:text-white transition-colors duration-300">
-                About
-              </a>
-              <a href="#skills" className="text-gray-300 hover:text-white transition-colors duration-300">
-                Skills
-              </a>
-              <a href="#projects" className="text-gray-300 hover:text-white transition-colors duration-300">
-                Projects
-              </a>
-              <a href="#contact" className="text-gray-300 hover:text-white transition-colors duration-300">
-                Contact
-              </a>
-            </div>
-          </motion.div>
-
-          {/* Social Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="text-center md:text-right"
-          >
-            <h4 className="font-semibold mb-4">Connect With Me</h4>
-            <div className="flex justify-center md:justify-end space-x-4">
-              {socialLinks.map((social, index) => (
-                <motion.a
-                  key={social.label}
-                  href={social.href}
-                  target={social.label !== 'Email' ? '_blank' : undefined}
-                  rel={social.label !== 'Email' ? 'noopener noreferrer' : undefined}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="text-gray-300 hover:text-white transition-colors duration-300"
-                  aria-label={social.label}
+          <div>
+            <Link
+              to="home"
+              smooth
+              duration={700}
+              offset={-80}
+              className="cursor-pointer"
+            >
+              <motion.div
+                whileHover={{ x: 3 }}
+                className="inline-flex items-center gap-3"
+              >
+                <div
+                  className="
+                    flex
+                    items-center
+                    justify-center
+                    w-10
+                    h-10
+                    rounded-xl
+                    bg-gradient-to-br
+                    from-blue-500
+                    via-indigo-500
+                    to-purple-600
+                    shadow-lg
+                    shadow-blue-500/20
+                  "
                 >
-                  <social.icon size={24} />
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
-        </div>
+                  <span className="text-white font-black text-sm">
+                    RL
+                  </span>
+                </div>
 
-        {/* Divider */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="border-t border-gray-700 mt-8 pt-8"
-        >
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-300 text-sm mb-4 md:mb-0">
-              © {currentYear} Ravindu Lakshitha. All rights reserved.
-            </p>
-            <p className="text-gray-300 text-sm flex items-center">
-              <FaHeart className="text-red-500 mx-1" /> 
+                <div>
+                  <p className="text-sm font-bold text-white">
+                    Ravindu Lakshitha
+                  </p>
+
+                  <p className="text-[10px] uppercase tracking-[0.16em] text-gray-600">
+                    Software Developer
+                  </p>
+                </div>
+              </motion.div>
+            </Link>
+
+            <p className="mt-4 max-w-sm text-sm text-gray-600 leading-6">
+              Building modern digital experiences through
+              code, creativity and continuous learning.
             </p>
           </div>
-        </motion.div>
+
+          {/* Navigation */}
+          <nav className="flex flex-wrap gap-x-6 gap-y-3">
+            {[
+              ['Home', 'home'],
+              ['About', 'about'],
+              ['Skills', 'skills'],
+              ['Projects', 'projects'],
+              ['Experience', 'experience'],
+              ['Contact', 'contact'],
+            ].map(([label, target]) => (
+              <Link
+                key={target}
+                to={target}
+                smooth
+                duration={700}
+                offset={-80}
+                className="
+                  text-xs
+                  font-medium
+                  text-gray-600
+                  hover:text-white
+                  cursor-pointer
+                  transition-colors
+                  duration-300
+                "
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Social + back to top */}
+          <div className="flex items-center gap-3">
+            <motion.a
+              href="https://github.com/RavinduLakshitha07"
+              target="_blank"
+              rel="noreferrer"
+              whileHover={{ y: -3 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="GitHub"
+              className="
+                flex
+                items-center
+                justify-center
+                w-10
+                h-10
+                rounded-xl
+                border
+                border-white/[0.08]
+                bg-white/[0.025]
+                text-gray-500
+                hover:text-white
+                hover:bg-white/[0.06]
+                transition-all
+                duration-300
+              "
+            >
+              <FaGithub size={15} />
+            </motion.a>
+
+            <motion.a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noreferrer"
+              whileHover={{ y: -3 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="LinkedIn"
+              className="
+                flex
+                items-center
+                justify-center
+                w-10
+                h-10
+                rounded-xl
+                border
+                border-white/[0.08]
+                bg-white/[0.025]
+                text-gray-500
+                hover:text-blue-400
+                hover:bg-white/[0.06]
+                transition-all
+                duration-300
+              "
+            >
+              <FaLinkedin size={15} />
+            </motion.a>
+
+            <Link
+              to="home"
+              smooth
+              duration={700}
+              offset={-80}
+              aria-label="Back to top"
+              className="cursor-pointer"
+            >
+              <motion.div
+                whileHover={{
+                  y: -3,
+                }}
+                whileTap={{
+                  scale: 0.95,
+                }}
+                className="
+                  flex
+                  items-center
+                  justify-center
+                  w-10
+                  h-10
+                  rounded-xl
+                  bg-white/[0.06]
+                  border
+                  border-white/[0.1]
+                  text-gray-400
+                  hover:text-white
+                  hover:bg-white/[0.1]
+                  transition-all
+                  duration-300
+                "
+              >
+                <FaArrowUp size={13} />
+              </motion.div>
+            </Link>
+          </div>
+        </div>
+
+        {/* Bottom */}
+        <div
+          className="
+            flex
+            flex-col
+            sm:flex-row
+            sm:items-center
+            sm:justify-between
+            gap-3
+            pt-6
+            border-t
+            border-white/[0.06]
+          "
+        >
+          <p className="text-[11px] text-gray-700">
+            © {currentYear} Ravindu Lakshitha. All rights reserved.
+          </p>
+
+          <p className="text-[11px] text-gray-700">
+            Designed & built with React
+          </p>
+        </div>
       </div>
     </footer>
   );
 };
 
-export default Footer; 
+export default Footer;

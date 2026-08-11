@@ -1,207 +1,737 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import {
+  FaCalendarAlt,
+  FaMapMarkerAlt,
+  FaBriefcase,
+  
+} from 'react-icons/fa';
 
 const Experience = () => {
   const experiences = [
     {
-      title: "Smart City Infrastructure Management System",
-      role: "Full-Stack Developer",
-      period: "2024",
-      location: "Academic Project",
-      description: "Led development of a comprehensive smart city management system with event and public space management capabilities.",
+      title: 'Smart City Infrastructure Management System',
+      role: 'Full-Stack Developer',
+      period: '2024',
+      location: 'Academic Project',
+      description:
+        'Led development of a comprehensive smart city management system with event and public space management capabilities.',
       achievements: [
-        "Collaborated in a team of 8 to build a full-stack system using MERN stack",
+        'Collaborated in a team of 8 to build a full-stack system using MERN stack',
         "Developed 'Event and Public Space Management' module with booking and reporting functionalities",
-        "Integrated MongoDB to store and manage event data",
-        "Implemented responsive UI components and user-friendly interfaces"
+        'Integrated MongoDB to store and manage event data',
+        'Implemented responsive UI components and user-friendly interfaces',
       ],
-      technologies: ["React", "Node.js", "MongoDB", "Express", "JavaScript"],
-      gradient: "from-blue-500 to-cyan-500"
+      technologies: [
+        'React',
+        'Node.js',
+        'MongoDB',
+        'Express',
+        'JavaScript',
+      ],
     },
+
     {
-      title: "ChoonPan Mobile App",
-      role: "Mobile App Developer",
-      period: "2025",
-      location: "Academic Project",
-      description: "Developed a full-stack food delivery mobile application with real-time tracking and payment processing.",
+      title: 'ChoonPan Mobile App',
+      role: 'Mobile App Developer',
+      period: '2025',
+      location: 'Academic Project',
+      description:
+        'Developed a full-stack food delivery mobile application with real-time tracking and payment processing.',
       achievements: [
-        "Built complete mobile app using Expo, React Native and Firebase",
-        "Implemented integrated live map navigation and real-time location tracking",
-        "Developed secure online payment processing with automated confirmations",
-        "Created intuitive ordering system for efficient delivery management"
+        'Built complete mobile app using Expo, React Native and Firebase',
+        'Implemented integrated live map navigation and real-time location tracking',
+        'Developed secure online payment processing with automated confirmations',
+        'Created intuitive ordering system for efficient delivery management',
       ],
-      technologies: ["React Native", "Firebase", "Expo", "Google Maps API", "JavaScript"],
-      gradient: "from-orange-500 to-red-500"
+      technologies: [
+        'React Native',
+        'Firebase',
+        'Expo',
+        'Google Maps API',
+        'JavaScript',
+      ],
     },
+
     {
-      title: "Online Banking System",
-      role: "Backend Developer",
-      period: "2023",
-      location: "Academic Project",
-      description: "Created a comprehensive banking system with loan application and management features.",
+      title: 'Online Banking System',
+      role: 'Backend Developer',
+      period: '2023',
+      location: 'Academic Project',
+      description:
+        'Created a comprehensive banking system with loan application and management features.',
       achievements: [
-        "Developed JSP pages and servlet-based workflows for loan applications",
-        "Connected to MySQL database using JDBC for data persistence",
-        "Designed responsive UI using CSS for improved user experience",
-        "Implemented secure authentication and authorization systems"
+        'Developed JSP pages and servlet-based workflows for loan applications',
+        'Connected to MySQL database using JDBC for data persistence',
+        'Designed responsive UI using CSS for improved user experience',
+        'Implemented secure authentication and authorization systems',
       ],
-      technologies: ["Java", "JSP", "MySQL", "JDBC", "CSS", "HTML"],
-      gradient: "from-green-500 to-emerald-500"
+      technologies: [
+        'Java',
+        'JSP',
+        'MySQL',
+        'JDBC',
+        'CSS',
+        'HTML',
+      ],
     },
+
     {
-      title: "Task Manager Mobile App",
-      role: "Android Developer",
-      period: "2023",
-      location: "Personal Project",
-      description: "Developed an Android task management application with local data storage and intuitive interface.",
+      title: 'Task Manager Mobile App',
+      role: 'Android Developer',
+      period: '2023',
+      location: 'Personal Project',
+      description:
+        'Developed an Android task management application with local data storage and intuitive interface.',
       achievements: [
-        "Built Android app using Kotlin with clean, intuitive UI design",
-        "Integrated SQLite database for local data storage and offline functionality",
-        "Implemented RecyclerView for efficient task listing and organization",
-        "Added features for adding, updating, and deleting tasks"
+        'Built Android app using Kotlin with clean, intuitive UI design',
+        'Integrated SQLite database for local data storage and offline functionality',
+        'Implemented RecyclerView for efficient task listing and organization',
+        'Added features for adding, updating, and deleting tasks',
       ],
-      technologies: ["Kotlin", "Android", "SQLite", "RecyclerView", "XML"],
-      gradient: "from-purple-500 to-pink-500"
-    }
+      technologies: [
+        'Kotlin',
+        'Android',
+        'SQLite',
+        'RecyclerView',
+        'XML',
+      ],
+    },
   ];
 
   return (
-    <section id="experience" className="section-padding bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50">
-      <div className="container-custom">
+    <section
+      className="
+        relative
+        py-28
+        px-4
+        sm:px-6
+        lg:px-8
+        overflow-hidden
+      "
+    >
+      <div className="max-w-7xl mx-auto">
+
+        {/* =====================================================
+            HEADER
+        ===================================================== */}
+
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-20"
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.3,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
+          className="max-w-3xl mb-16"
         >
-          <h2 className="text-5xl font-bold text-primary mb-6">Work Experience</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-accent to-blue-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            My journey in software development through various projects and academic work.
+          <div className="section-label mb-4">
+            Experience
+          </div>
+
+          <h2
+            className="
+              text-4xl
+              sm:text-5xl
+              lg:text-6xl
+              font-bold
+              tracking-tight
+            "
+          >
+            My journey so
+            <span className="gradient-text">
+              {' '}
+              far.
+            </span>
+          </h2>
+
+          <p
+            className="
+              mt-5
+              max-w-2xl
+              text-gray-400
+              leading-7
+            "
+          >
+            My journey in software development through
+            academic and personal projects, building
+            experience across web, mobile and full-stack
+            development.
           </p>
         </motion.div>
 
-        <div className="space-y-8">
-          {experiences.map((experience, index) => (
-            <motion.div
-              key={experience.title}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -5, scale: 1.02 }}
-              className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100"
-            >
-              <div className={`bg-gradient-to-r ${experience.gradient} p-8 text-white relative overflow-hidden`}>
-                <div className="absolute inset-0 bg-black opacity-10"></div>
-                <div className="relative z-10">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <div>
-                      <h3 className="text-2xl font-bold mb-2">{experience.title}</h3>
-                      <p className="text-xl font-medium opacity-90">{experience.role}</p>
-                    </div>
-                    <div className="flex items-center space-x-6 mt-4 md:mt-0">
-                      <div className="flex items-center text-white opacity-90">
-                        <FaCalendarAlt className="mr-2" />
-                        <span className="text-sm font-medium">{experience.period}</span>
-                      </div>
-                      <div className="flex items-center text-white opacity-90">
-                        <FaMapMarkerAlt className="mr-2" />
-                        <span className="text-sm font-medium">{experience.location}</span>
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-white text-opacity-90 leading-relaxed">{experience.description}</p>
-                </div>
-              </div>
+        {/* =====================================================
+            TIMELINE
+        ===================================================== */}
 
-              <div className="p-8">
-                {/* Achievements */}
-                <div className="mb-8">
-                  <h4 className="text-xl font-bold text-primary mb-6 flex items-center">
-                    <div className="w-3 h-3 bg-accent rounded-full mr-3"></div>
-                    Key Achievements
-                  </h4>
-                  <ul className="space-y-4">
-                    {experience.achievements.map((achievement, achievementIndex) => (
-                      <motion.li 
-                        key={achievementIndex} 
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: achievementIndex * 0.1 }}
-                        viewport={{ once: true }}
-                        className="flex items-start"
-                      >
-                        <div className="w-2 h-2 bg-accent rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                        <span className="text-gray-700 leading-relaxed">{achievement}</span>
-                      </motion.li>
-                    ))}
-                  </ul>
-                </div>
+        <div className="relative">
 
-                {/* Technologies */}
-                <div>
-                  <h4 className="text-xl font-bold text-primary mb-6 flex items-center">
-                    <div className="w-3 h-3 bg-accent rounded-full mr-3"></div>
-                    Technologies Used
-                  </h4>
-                  <div className="flex flex-wrap gap-3">
-                    {experience.technologies.map((tech, techIndex) => (
-                      <motion.span
-                        key={techIndex}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.3, delay: techIndex * 0.1 }}
-                        viewport={{ once: true }}
-                        className="bg-gray-100 px-4 py-2 rounded-full text-sm text-gray-700 font-medium hover:bg-accent hover:text-white transition-all duration-300"
-                      >
-                        {tech}
-                      </motion.span>
-                    ))}
+          {/* Desktop timeline */}
+          <motion.div
+            initial={{
+              scaleY: 0,
+            }}
+            whileInView={{
+              scaleY: 1,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.05,
+            }}
+            transition={{
+              duration: 1.5,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="
+              hidden
+              md:block
+              absolute
+              left-1/2
+              top-0
+              bottom-0
+              w-px
+              bg-gradient-to-b
+              from-blue-500/60
+              via-indigo-500/30
+              to-transparent
+              origin-top
+            "
+          />
+
+          {/* Mobile timeline */}
+          <motion.div
+            initial={{
+              scaleY: 0,
+            }}
+            whileInView={{
+              scaleY: 1,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.05,
+            }}
+            transition={{
+              duration: 1.2,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="
+              md:hidden
+              absolute
+              left-[20px]
+              top-0
+              bottom-0
+              w-px
+              bg-gradient-to-b
+              from-blue-500/60
+              via-indigo-500/30
+              to-transparent
+              origin-top
+            "
+          />
+
+          <div className="space-y-16 md:space-y-24">
+            {experiences.map((experience, index) => {
+              const isLeft = index % 2 === 0;
+
+              return (
+                <motion.div
+                  key={experience.title}
+                  initial={{
+                    opacity: 0,
+                    y: 50,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  viewport={{
+                    once: true,
+                    amount: 0.15,
+                  }}
+                  transition={{
+                    duration: 0.7,
+                    delay: index * 0.08,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  className="
+                    relative
+                    md:grid
+                    md:grid-cols-2
+                    md:gap-16
+                  "
+                >
+
+                  {/* =================================================
+                      TIMELINE NODE
+                  ================================================= */}
+
+                  <motion.div
+                    initial={{
+                      scale: 0,
+                    }}
+                    whileInView={{
+                      scale: 1,
+                    }}
+                    viewport={{
+                      once: true,
+                    }}
+                    transition={{
+                      duration: 0.4,
+                      delay: index * 0.08 + 0.2,
+                    }}
+                    className="
+                      absolute
+                      left-0
+                      top-8
+                      md:left-1/2
+                      md:-translate-x-1/2
+                      z-20
+                      flex
+                      items-center
+                      justify-center
+                      w-[41px]
+                      h-[41px]
+                      rounded-full
+                      bg-[#080b11]
+                      border
+                      border-blue-500/30
+                      shadow-lg
+                      shadow-blue-500/10
+                    "
+                  >
+                    <FaBriefcase
+                      className="
+                        text-blue-400
+                        text-sm
+                      "
+                    />
+                  </motion.div>
+
+                  {/* =================================================
+                      CARD
+                  ================================================= */}
+
+                  <div
+                    className={`
+                      ${
+                        isLeft
+                          ? 'md:col-start-1 md:pr-8'
+                          : 'md:col-start-2 md:pl-8'
+                      }
+                      ml-16
+                      md:ml-0
+                    `}
+                  >
+                    <motion.article
+                      whileHover={{
+                        y: -5,
+                      }}
+                      className="
+                        group
+                        relative
+                        overflow-hidden
+                        rounded-3xl
+                        border
+                        border-white/[0.08]
+                        bg-white/[0.025]
+                        transition-all
+                        duration-500
+                        hover:bg-white/[0.045]
+                        hover:border-white/[0.15]
+                        hover:shadow-2xl
+                        hover:shadow-black/20
+                      "
+                    >
+                      {/* Glow */}
+                      <div
+                        className="
+                          absolute
+                          -right-24
+                          -top-24
+                          w-56
+                          h-56
+                          rounded-full
+                          bg-blue-500/[0.06]
+                          blur-[80px]
+                          opacity-0
+                          group-hover:opacity-100
+                          transition-opacity
+                          duration-700
+                          pointer-events-none
+                        "
+                      />
+
+                      <div className="relative p-6 sm:p-7">
+
+                        {/* Top metadata */}
+                        <div
+                          className="
+                            flex
+                            flex-wrap
+                            items-center
+                            gap-3
+                          "
+                        >
+                          <span
+                            className="
+                              inline-flex
+                              items-center
+                              gap-2
+                              px-3
+                              py-1.5
+                              rounded-lg
+                              bg-blue-500/[0.08]
+                              border
+                              border-blue-500/10
+                              text-[10px]
+                              uppercase
+                              tracking-[0.15em]
+                              font-semibold
+                              text-blue-400
+                            "
+                          >
+                            <FaBriefcase size={10} />
+                            {experience.role}
+                          </span>
+
+                          <span
+                            className="
+                              flex
+                              items-center
+                              gap-1.5
+                              text-xs
+                              text-gray-600
+                            "
+                          >
+                            <FaCalendarAlt size={10} />
+                            {experience.period}
+                          </span>
+
+                          <span
+                            className="
+                              flex
+                              items-center
+                              gap-1.5
+                              text-xs
+                              text-gray-600
+                            "
+                          >
+                            <FaMapMarkerAlt size={10} />
+                            {experience.location}
+                          </span>
+                        </div>
+
+                        {/* Title */}
+                        <h3
+                          className="
+                            mt-5
+                            text-2xl
+                            sm:text-3xl
+                            font-bold
+                            text-white
+                            tracking-tight
+                          "
+                        >
+                          {experience.title}
+                        </h3>
+
+                        {/* Description */}
+                        <p
+                          className="
+                            mt-4
+                            text-sm
+                            text-gray-500
+                            leading-7
+                          "
+                        >
+                          {experience.description}
+                        </p>
+
+                        {/* Divider */}
+                        <div
+                          className="
+                            h-px
+                            bg-white/[0.06]
+                            my-6
+                          "
+                        />
+
+                        {/* Achievements */}
+                        <div>
+                          <p
+                            className="
+                              text-[10px]
+                              uppercase
+                              tracking-[0.17em]
+                              font-semibold
+                              text-gray-600
+                            "
+                          >
+                            Key Achievements
+                          </p>
+
+                          <div className="mt-4 space-y-3">
+                            {experience.achievements.map(
+                              (achievement, achievementIndex) => (
+                                <motion.div
+                                  key={achievement}
+                                  initial={{
+                                    opacity: 0,
+                                    x: -10,
+                                  }}
+                                  whileInView={{
+                                    opacity: 1,
+                                    x: 0,
+                                  }}
+                                  viewport={{
+                                    once: true,
+                                  }}
+                                  transition={{
+                                    duration: 0.35,
+                                    delay:
+                                      achievementIndex * 0.06,
+                                  }}
+                                  className="
+                                    flex
+                                    items-start
+                                    gap-3
+                                  "
+                                >
+                                  <span
+                                    className="
+                                      mt-2
+                                      w-1.5
+                                      h-1.5
+                                      rounded-full
+                                      bg-blue-400
+                                      shrink-0
+                                    "
+                                  />
+
+                                  <span
+                                    className="
+                                      text-sm
+                                      text-gray-500
+                                      leading-6
+                                    "
+                                  >
+                                    {achievement}
+                                  </span>
+                                </motion.div>
+                              )
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Technologies */}
+                        <div className="mt-7">
+                          <p
+                            className="
+                              text-[10px]
+                              uppercase
+                              tracking-[0.17em]
+                              font-semibold
+                              text-gray-600
+                              mb-3
+                            "
+                          >
+                            Technologies
+                          </p>
+
+                          <div className="flex flex-wrap gap-2">
+                            {experience.technologies.map(
+                              (technology) => (
+                                <span
+                                  key={technology}
+                                  className="
+                                    px-2.5
+                                    py-1
+                                    rounded-md
+                                    bg-white/[0.035]
+                                    border
+                                    border-white/[0.06]
+                                    text-[11px]
+                                    text-gray-500
+                                    transition-colors
+                                    duration-300
+                                    group-hover:text-gray-400
+                                  "
+                                >
+                                  {technology}
+                                </span>
+                              )
+                            )}
+                          </div>
+                        </div>
+
+                      </div>
+                    </motion.article>
                   </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
 
-        {/* Enhanced Summary */}
+        {/* =====================================================
+            SUMMARY
+        ===================================================== */}
+
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-20 text-center"
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.2,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
+          className="
+            mt-20
+            rounded-3xl
+            border
+            border-white/[0.08]
+            bg-white/[0.025]
+            p-7
+            sm:p-9
+          "
         >
-          <div className="bg-gradient-to-r from-white to-gray-50 p-12 rounded-3xl shadow-2xl max-w-5xl mx-auto border border-gray-100">
-            <h3 className="text-3xl font-bold text-primary mb-6">Experience Summary</h3>
-            <p className="text-lg text-gray-700 leading-relaxed mb-8 max-w-4xl mx-auto">
-              Throughout my academic journey, I've worked on diverse projects ranging from web applications 
-              to mobile apps, gaining hands-on experience with modern technologies and development practices. 
-              Each project has helped me develop strong problem-solving skills and a deep understanding of 
-              full-stack development principles.
-            </p>
-            <div className="grid md:grid-cols-3 gap-8 text-center">
-              <div className="bg-white p-6 rounded-2xl shadow-lg">
-                <div className="text-4xl font-bold text-accent mb-2">4+</div>
-                <div className="text-gray-600 font-medium">Projects Completed</div>
-              </div>
-              <div className="bg-white p-6 rounded-2xl shadow-lg">
-                <div className="text-4xl font-bold text-accent mb-2">2</div>
-                <div className="text-gray-600 font-medium">Mobile Apps</div>
-              </div>
-              <div className="bg-white p-6 rounded-2xl shadow-lg">
-                <div className="text-4xl font-bold text-accent mb-2">10+</div>
-                <div className="text-gray-600 font-medium">Technologies</div>
-              </div>
+          <div
+            className="
+              flex
+              flex-col
+              lg:flex-row
+              lg:items-center
+              lg:justify-between
+              gap-8
+            "
+          >
+            <div className="max-w-2xl">
+              <p
+                className="
+                  text-xs
+                  uppercase
+                  tracking-[0.17em]
+                  text-blue-400
+                  font-semibold
+                "
+              >
+                Experience Summary
+              </p>
+
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  text-gray-500
+                  leading-7
+                "
+              >
+                Throughout my academic journey, I've worked
+                on diverse projects ranging from web
+                applications to mobile apps, gaining
+                hands-on experience with modern technologies
+                and development practices. Each project has
+                helped me develop strong problem-solving
+                skills and a deeper understanding of
+                full-stack development principles.
+              </p>
+            </div>
+
+            <div
+              className="
+                grid
+                grid-cols-3
+                gap-3
+                sm:gap-4
+                shrink-0
+              "
+            >
+              <Stat
+                value="4+"
+                label="Projects"
+              />
+
+              <Stat
+                value="2"
+                label="Mobile Apps"
+              />
+
+              <Stat
+                value="10+"
+                label="Technologies"
+              />
             </div>
           </div>
         </motion.div>
+
       </div>
     </section>
   );
 };
 
-export default Experience; 
+/* =========================================================
+   STAT
+   ========================================================= */
+
+const Stat = ({ value, label }) => {
+  return (
+    <motion.div
+      whileHover={{
+        y: -4,
+      }}
+      className="
+        min-w-[90px]
+        sm:min-w-[110px]
+        p-4
+        sm:p-5
+        rounded-2xl
+        border
+        border-white/[0.07]
+        bg-black/10
+        text-center
+      "
+    >
+      <div
+        className="
+          text-2xl
+          sm:text-3xl
+          font-bold
+          gradient-text
+        "
+      >
+        {value}
+      </div>
+
+      <div
+        className="
+          mt-1
+          text-[10px]
+          sm:text-xs
+          text-gray-600
+          font-medium
+        "
+      >
+        {label}
+      </div>
+    </motion.div>
+  );
+};
+
+export default Experience;

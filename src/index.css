@@ -1,24 +1,526 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* =========================================================
+   GLOBAL DESIGN SYSTEM
+========================================================= */
+
+:root {
+  --background: #07090d;
+  --background-secondary: #0b0f16;
+
+  --surface: rgba(255, 255, 255, 0.045);
+  --surface-hover: rgba(255, 255, 255, 0.075);
+
+  --border: rgba(255, 255, 255, 0.09);
+  --border-hover: rgba(255, 255, 255, 0.18);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #a7b0c0;
+  --text-muted: #6f7a8c;
+
+  --accent: #3b82f6;
+  --accent-light: #60a5fa;
+  --accent-purple: #8b5cf6;
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    #3b82f6 0%,
+    #6366f1 50%,
+    #8b5cf6 100%
+  );
+
+  --gradient-text: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #93c5fd 45%,
+    #a78bfa 100%
+  );
+}
+
+/* =========================================================
+   BASE
+========================================================= */
+
 @layer base {
   html {
     scroll-behavior: smooth;
+    background: var(--background);
   }
-  
+
   body {
+    margin: 0;
+    padding: 0;
+
     font-family: 'Inter', sans-serif;
+
+    background:
+      radial-gradient(
+        circle at 15% 10%,
+        rgba(59, 130, 246, 0.07),
+        transparent 30%
+      ),
+      radial-gradient(
+        circle at 85% 25%,
+        rgba(139, 92, 246, 0.06),
+        transparent 30%
+      ),
+      radial-gradient(
+        circle at 50% 80%,
+        rgba(59, 130, 246, 0.035),
+        transparent 35%
+      ),
+      var(--background);
+
+    color: var(--text-primary);
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    overflow-x: hidden;
+
+    min-height: 100vh;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  ::selection {
+    background: rgba(59, 130, 246, 0.35);
+    color: #ffffff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #07090d;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      180deg,
+      #3b82f6,
+      #8b5cf6
+    );
+
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+      180deg,
+      #60a5fa,
+      #a78bfa
+    );
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  button {
+    font-family: inherit;
+  }
+
+  input,
+  textarea,
+  select {
+    font-family: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid rgba(96, 165, 250, 0.8);
+    outline-offset: 3px;
   }
 }
 
+/* =========================================================
+   REUSABLE COMPONENT STYLES
+========================================================= */
+
 @layer components {
   .section-padding {
-    @apply py-16 px-4 sm:px-6 lg:px-8;
+    @apply py-20 px-4 sm:px-6 lg:px-8;
   }
-  
+
   .container-custom {
-    @apply max-w-7xl mx-auto;
+    @apply max-w-7xl mx-auto w-full;
+  }
+
+  /* -------------------------------------------------------
+     Premium glass surface
+  ------------------------------------------------------- */
+
+  .glass {
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid var(--border);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  .glass-hover {
+    transition:
+      background 300ms ease,
+      border-color 300ms ease,
+      box-shadow 300ms ease,
+      transform 300ms ease;
+  }
+
+  .glass-hover:hover {
+    background: var(--surface-hover);
+    border-color: var(--border-hover);
+
+    box-shadow:
+      0 20px 60px rgba(0, 0, 0, 0.25),
+      0 0 40px rgba(59, 130, 246, 0.06);
+
+    transform: translateY(-3px);
+  }
+
+  /* -------------------------------------------------------
+     Gradient text
+  ------------------------------------------------------- */
+
+  .gradient-text {
+    background: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* -------------------------------------------------------
+     Blue / purple gradient
+  ------------------------------------------------------- */
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  /* -------------------------------------------------------
+     Premium border
+  ------------------------------------------------------- */
+
+  .premium-border {
+    border: 1px solid var(--border);
+  }
+
+  /* -------------------------------------------------------
+     Section heading label
+  ------------------------------------------------------- */
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+
+    color: var(--accent-light);
+  }
+
+  .section-label::before {
+    content: '';
+
+    width: 24px;
+    height: 1px;
+
+    background: var(--accent);
+  }
+
+  /* -------------------------------------------------------
+     Premium glow
+  ------------------------------------------------------- */
+
+  .accent-glow {
+    box-shadow:
+      0 0 30px rgba(59, 130, 246, 0.12),
+      0 0 80px rgba(59, 130, 246, 0.05);
+  }
+
+  /* -------------------------------------------------------
+     Subtle background grid
+  ------------------------------------------------------- */
+
+  .bg-grid {
+    background-image:
+      linear-gradient(
+        rgba(255, 255, 255, 0.025) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.025) 1px,
+        transparent 1px
+      );
+
+    background-size: 48px 48px;
+  }
+
+  /* -------------------------------------------------------
+     Soft page glow
+  ------------------------------------------------------- */
+
+  .page-glow {
+    position: relative;
+  }
+
+  .page-glow::before {
+    content: '';
+
+    position: absolute;
+
+    top: 10%;
+    left: 50%;
+
+    width: 500px;
+    height: 500px;
+
+    transform: translateX(-50%);
+
+    background: rgba(59, 130, 246, 0.06);
+
+    border-radius: 50%;
+
+    filter: blur(120px);
+
+    pointer-events: none;
+
+    z-index: 0;
+  }
+
+  /* -------------------------------------------------------
+     Section divider
+  ------------------------------------------------------- */
+
+  .section-divider {
+    width: 100%;
+    height: 1px;
+
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.08),
+      transparent
+    );
+  }
+
+  /* -------------------------------------------------------
+     Premium card
+  ------------------------------------------------------- */
+
+  .premium-card {
+    background: rgba(255, 255, 255, 0.025);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 1.5rem;
+
+    transition:
+      transform 400ms ease,
+      background 400ms ease,
+      border-color 400ms ease,
+      box-shadow 400ms ease;
+  }
+
+  .premium-card:hover {
+    background: rgba(255, 255, 255, 0.045);
+
+    border-color: rgba(255, 255, 255, 0.14);
+
+    box-shadow:
+      0 25px 70px rgba(0, 0, 0, 0.2),
+      0 0 40px rgba(59, 130, 246, 0.04);
+  }
+}
+
+/* =========================================================
+   UTILITY ANIMATIONS
+========================================================= */
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slow-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 5s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 5s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.animate-fade-up {
+  animation: fade-up 700ms ease-out both;
+}
+
+.animate-slow-spin {
+  animation: slow-spin 20s linear infinite;
+}
+
+/* =========================================================
+   PERFORMANCE
+========================================================= */
+
+.fixed {
+  will-change: transform;
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .section-padding {
+    @apply py-16 px-4;
+  }
+
+  .page-glow::before {
+    width: 300px;
+    height: 300px;
+    filter: blur(90px);
+  }
+
+  .bg-grid {
+    background-size: 36px 36px;
+  }
+
+  .section-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+  }
+}
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+  .section-padding {
+    @apply py-14 px-3;
+  }
+}
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .bg-grid,
+  .fixed {
+    display: none !important;
   }
 }
